@@ -44,11 +44,12 @@ public class PilihGambarCombobox extends javax.swing.JFrame {
         getContentPane().add(imagePanel, java.awt.BorderLayout.CENTER);
 
         cbbxAnime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Blue Anime Wallpaper", "Red Anime Wallpaper" }));
-        cbbxAnime.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbbxAnimeActionPerformed(evt);
+        cbbxAnime.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbbxAnimeItemStateChanged(evt);
             }
         });
+        
         buttonPanel.add(cbbxAnime);
 
         getContentPane().add(buttonPanel, java.awt.BorderLayout.PAGE_START);
@@ -56,10 +57,10 @@ public class PilihGambarCombobox extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbbxAnimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbxAnimeActionPerformed
+    private void cbbxAnimeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbbxAnimeItemStateChanged
         CardLayout layout = (CardLayout) (imagePanel.getLayout());
         layout.show(imagePanel, String.valueOf(cbbxAnime.getSelectedIndex()));
-    }//GEN-LAST:event_cbbxAnimeActionPerformed
+    }//GEN-LAST:event_cbbxAnimeItemStateChanged
 
     /**
      * @param args the command line arguments
